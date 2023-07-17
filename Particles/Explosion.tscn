@@ -1,0 +1,174 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://Scripts/Explosion.gd" type="Script" id=1]
+[ext_resource path="res://Sounds/SFX/51467__smcameron__missile-explosion.wav" type="AudioStream" id=2]
+[ext_resource path="res://Sounds/SFX/spider_ouch.ogg" type="AudioStream" id=3]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+blend_mode = 1
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0, 0.159948, 0.309493, 0.738622, 1 )
+colors = PoolColorArray( 0.999512, 0.999512, 0.550512, 1, 1, 0.882353, 0.101961, 1, 0.827637, 0.504889, 0.135784, 1, 0.847168, 0.210396, 0.115824, 1, 1, 0, 0, 1 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="Curve" id=4]
+min_value = -400.0
+max_value = 400.0
+_data = [ Vector2( 0, 400 ), 0.0, 11475.0, 0, 0, Vector2( 0.134503, -52.7272 ), -1373.72, -1373.72, 0, 0, Vector2( 1, -129.091 ), 991.698, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
+
+[sub_resource type="Curve" id=6]
+max_value = 2.5
+_data = [ Vector2( 0, 2.5 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.900568 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=7]
+curve = SubResource( 6 )
+
+[sub_resource type="ParticlesMaterial" id=8]
+emission_shape = 1
+emission_sphere_radius = 2.0
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 100.0
+initial_velocity_random = 0.5
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 100.0
+linear_accel_random = 0.2
+linear_accel_curve = SubResource( 5 )
+scale = 2.0
+scale_random = 1.0
+scale_curve = SubResource( 7 )
+color_ramp = SubResource( 3 )
+
+[sub_resource type="CanvasItemMaterial" id=9]
+blend_mode = 1
+
+[sub_resource type="GradientTexture" id=10]
+gradient = SubResource( 2 )
+
+[sub_resource type="Curve" id=11]
+max_value = 300.0
+_data = [ Vector2( 0, 300 ), 0.0, 20580.0, 0, 0, Vector2( 0.0580808, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=12]
+curve = SubResource( 11 )
+
+[sub_resource type="Curve" id=13]
+max_value = 3.0
+_data = [ Vector2( 0, 2.50568 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=14]
+curve = SubResource( 13 )
+
+[sub_resource type="ParticlesMaterial" id=15]
+emission_shape = 1
+emission_sphere_radius = 1.0
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 140, 0 )
+initial_velocity = 100.0
+initial_velocity_random = 0.3
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 100.0
+linear_accel_random = 0.4
+linear_accel_curve = SubResource( 12 )
+scale = 2.5
+scale_random = 1.0
+scale_curve = SubResource( 14 )
+color_ramp = SubResource( 10 )
+
+[sub_resource type="Gradient" id=16]
+offsets = PoolRealArray( 0.131339, 1 )
+colors = PoolColorArray( 0.176471, 0.176471, 0.176471, 0.705882, 0.270588, 0.270588, 0.270588, 0.219608 )
+
+[sub_resource type="GradientTexture" id=17]
+gradient = SubResource( 16 )
+
+[sub_resource type="Curve" id=18]
+min_value = -200.0
+max_value = 200.0
+_data = [ Vector2( 0, 200 ), 0.0, 10125.0, 0, 0, Vector2( 0.0669192, -115.455 ), -4713.96, 0.0, 1, 0, Vector2( 1, -104.545 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=19]
+curve = SubResource( 18 )
+
+[sub_resource type="Curve" id=20]
+min_value = 0.99
+max_value = 5.0
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 5 ), 8.42099, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=21]
+curve = SubResource( 20 )
+
+[sub_resource type="ParticlesMaterial" id=22]
+emission_shape = 1
+emission_sphere_radius = 2.0
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 80.0
+initial_velocity_random = 0.5
+orbit_velocity = 0.15
+orbit_velocity_random = 1.0
+linear_accel = 100.0
+linear_accel_random = 0.5
+linear_accel_curve = SubResource( 19 )
+scale = 2.0
+scale_random = 1.0
+scale_curve = SubResource( 21 )
+color_ramp = SubResource( 17 )
+
+[node name="Explosion" type="Node2D"]
+scale = Vector2( 3, 3 )
+script = ExtResource( 1 )
+
+[node name="fuego" type="Particles2D" parent="."]
+material = SubResource( 1 )
+emitting = false
+amount = 200
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.5
+process_material = SubResource( 8 )
+
+[node name="chispa" type="Particles2D" parent="fuego"]
+material = SubResource( 9 )
+emitting = false
+amount = 10
+lifetime = 0.6
+one_shot = true
+explosiveness = 0.8
+process_material = SubResource( 15 )
+
+[node name="humo" type="Particles2D" parent="fuego"]
+show_behind_parent = true
+emitting = false
+amount = 500
+lifetime = 0.7
+one_shot = true
+explosiveness = 0.8
+process_material = SubResource( 22 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="ExplosionSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+autoplay = true
+bus = "SFX_bus"
+
+[node name="ouch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -5.0
+autoplay = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

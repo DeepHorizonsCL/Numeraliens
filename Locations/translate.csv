@@ -1,0 +1,23 @@
+keys,es,en,de,ko,ja,ru,zh,fr,it,pt
+KEY_START,Empezar,Start,Start,스타트,開始,Начните,开始,Début,Inizio,Começar
+LABEL_EXTREME,Extremo,Extreme,Extrem,극단,エクストリーム,Экстремальный,极端,Extrême,Estremo,Extremo
+LABEL_NORMAL,Normal,Normal,normal,표준,正常,обычный,普通的,normal,normale,normal
+SOUND_MENU_TITLE,Menu de Sonido,Sound Menu,Tonmenü,사운드 메뉴,サウンドメニュー,Меню Звук,声音菜单,Menu Son,Menu Audio,Menu De Som
+SOUND_MENU_GENERAL,General,General,Allgemeines,일반,一般的な,Генеральный,一般,Général,Generale,Geral
+SOUND_MENU_MUSICA,Musica,Music,Musik,음악,音楽,Музыка,音乐,Musique,Musica,Música
+SOUND_MENU_EFECTOS,Efectos,Effects,Auswirkungen,효과,効果,Последствия,效果,Effets,Effetti,Efeito
+MENU,Menú,Menu,Speisekarte,메뉴,メニュー,Меню,菜单,Menu,Menù,Menu
+WARNING,Advertencia,Warning,Warnung,경고,警告,Предупреждение,警告,Attention,Avvertimento,Atenção
+SCORE,Puntaje,Score,Partituren,점수,スコア,Множество,分数,Scores,Punteggi,Pontuação
+BEST_SCORE,Mejor puntaje,Best score,Bestes Ergebnis,최고 점수,最高のスコア,Лучший результат,最佳得分,Meilleur score,Miglior punteggio,Melhor pontuação
+ACTUAL_SCORE,Puntaje Actual,Current Score,Momentaner Punktestand,현재 점수,現在のスコア,Текущий счет,当前分数,Score actuel,Punteggio attuale,Pontuação atual
+GAMEOVER,Juego Terminado,Game Over,Spiel Ist Aus,게임 끝,ゲームオーバー,Игра Окончена,游戏结束,Jeu Terminé,Gioco Finito,Fim De Jogo
+SUB_TITLE,Arañas,Spiders,Spinnen,거미,クモ,Пауки,蜘蛛網,Araignées,Ragni,Araignées
+FELICIDADES,FELICITACIONES Proximamente mas niveles,Congratulations More Levels Coming Soon,Mehr Ebenen Congratulations In Kürze,곧 축하 더 수준,すぐに来ておめでとうござい以上のレベル,Поздравляем Больше Уровней В Ближайшее Время,恭喜以上的水平即将推出,Félicitations Plus De Niveaux À Venir,Congratulazioni Più Livelli In Arrivo,Parabéns Mais Níveis Em Breve
+BTN_CONTINUAR,Continuar,Continue,Fortsetzen,계속하다,継続する,Продолжить,继续,Continuer,Continua,Continuar
+BTN_PERDER,Derrota,Defeat,Niederlage,패배 ,敗北,Поражение,打败 ,Défaite,Sconfitta,Derrota
+BTN_VOLVER,Volver,Return,Rückkehr,반환,戻る,Возвращаться,返回,Revenir,ritorno,Retorna
+BTN_SALIR,Salir,Exit,Ausfahrt,출구,出口,выход,出口,sortir ,Uscita,saída
+BTN_TUTO,Tutorial,How to play,Ausfahrt,출구,出口,выход,出口,sortir ,Uscita,saída
+BTN_REPLAY,Denuevo,Replay,Ausfahrt,출구,出口,выход,出口,sortir ,Uscita,saída
+VISITANOS,Visitanos en:,Visit Us In:,Besuchen Sie Uns In:,우리를 방문하십시오 :,私達を訪問して：,Посетите Нас В:,访问我们在：,Venez Nous Rendre Visite À:,Vieni a trovarci a: ,Visite-Nos Em:

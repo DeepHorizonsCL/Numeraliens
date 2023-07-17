@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/SpiderSpaceRisk-2.ogg-197d3b30b707be4e7d207725bf0b4799.oggstr"
+
+[deps]
+
+source_file="res://Sounds/Music/SpiderSpaceRisk-2.ogg"
+dest_files=[ "res://.import/SpiderSpaceRisk-2.ogg-197d3b30b707be4e7d207725bf0b4799.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/spider_ouch.ogg-65046e73d540fcbdf707482ec76dc54f.oggstr"
+
+[deps]
+
+source_file="res://Sounds/SFX/spider_ouch.ogg"
+dest_files=[ "res://.import/spider_ouch.ogg-65046e73d540fcbdf707482ec76dc54f.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

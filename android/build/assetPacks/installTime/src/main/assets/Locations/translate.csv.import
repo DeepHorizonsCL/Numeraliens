@@ -1,0 +1,16 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+
+[deps]
+
+files=[ "res://Locations/translate.es.translation", "res://Locations/translate.en.translation", "res://Locations/translate.de.translation", "res://Locations/translate.ko.translation", "res://Locations/translate.ja.translation", "res://Locations/translate.ru.translation", "res://Locations/translate.zh.translation", "res://Locations/translate.fr.translation", "res://Locations/translate.it.translation", "res://Locations/translate.pt.translation" ]
+
+source_file="res://Locations/translate.csv"
+dest_files=[ "res://Locations/translate.es.translation", "res://Locations/translate.en.translation", "res://Locations/translate.de.translation", "res://Locations/translate.ko.translation", "res://Locations/translate.ja.translation", "res://Locations/translate.ru.translation", "res://Locations/translate.zh.translation", "res://Locations/translate.fr.translation", "res://Locations/translate.it.translation", "res://Locations/translate.pt.translation" ]
+
+[params]
+
+compress=true
+delimiter=0

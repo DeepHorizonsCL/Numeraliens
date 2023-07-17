@@ -1,0 +1,339 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Font/Main_Menu_Fuente.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scripts/MenuPuntaje.gd" type="Script" id=2]
+[ext_resource path="res://Font/Score_fuente.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Font/Regresiva_fuente.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Sprites/menu_background2.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/bottons/start_botton2.png" type="Texture" id=6]
+[ext_resource path="res://Font/Score2_fuente.tres" type="DynamicFont" id=7]
+[ext_resource path="res://Sprites/bottons/start_botton2_red.png" type="Texture" id=8]
+[ext_resource path="res://Sounds/SFX/number_down3.wav" type="AudioStream" id=9]
+[ext_resource path="res://Sounds/SFX/number_down2.wav" type="AudioStream" id=10]
+
+[sub_resource type="Animation" id=1]
+resource_name = "continuar"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Continuar:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.984314, 0.309804, 0.309804, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Control:rect_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.1, 1.1 ), Vector2( 1, 1 ) ]
+}
+
+[node name="Puntaje" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+modulate = Color( 0, 0, 0, 0.666667 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.0
+margin_right = -1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameOver" type="Label" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -302.515
+margin_top = -369.973
+margin_right = 297.485
+margin_bottom = -249.973
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = -1
+custom_constants/line_spacing = 56
+custom_constants/shadow_offset_y = 6
+custom_fonts/font = ExtResource( 3 )
+text = "GAME OVER"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="TextureRect" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -246.0
+margin_top = -254.0
+margin_right = 254.0
+margin_bottom = 247.0
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelPuntaje" type="Label" parent="Panel"]
+modulate = Color( 0.898039, 1, 0, 1 )
+anchor_right = 1.0
+anchor_bottom = 0.121
+margin_left = 104.0
+margin_top = 40.0
+margin_right = 104.0
+margin_bottom = 54.0
+custom_fonts/font = ExtResource( 1 )
+text = "SCORE"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelMax" type="Label" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -114.0
+margin_top = -138.5
+margin_right = 117.0
+margin_bottom = -96.5
+rect_pivot_offset = Vector2( 112, 16 )
+custom_fonts/font = ExtResource( 1 )
+text = "BEST_SCORE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Max" type="Label" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -94.0
+margin_top = -94.5
+margin_right = 58.0
+margin_bottom = -38.5
+rect_pivot_offset = Vector2( 76, 28 )
+custom_fonts/font = ExtResource( 7 )
+text = "10202"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelActual" type="Label" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -138.0
+margin_top = -26.5
+margin_right = 151.0
+margin_bottom = 15.5
+rect_pivot_offset = Vector2( 134.5, 15.5 )
+custom_fonts/font = ExtResource( 1 )
+text = "ACTUAL_SCORE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Actual" type="Label" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -103.5
+margin_top = 25.0
+margin_right = 83.5
+margin_bottom = 68.0
+rect_pivot_offset = Vector2( 100, 20 )
+custom_fonts/font = ExtResource( 7 )
+text = "10202"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Volver" type="TextureButton" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -146.0
+margin_top = -189.0
+margin_right = 126.0
+margin_bottom = -61.0
+texture_normal = ExtResource( 6 )
+expand = true
+
+[node name="LabelActual2" type="Label" parent="Panel/Volver"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -104.0
+margin_top = -16.0
+margin_right = 116.0
+margin_bottom = 21.0
+rect_pivot_offset = Vector2( 128, 24 )
+custom_fonts/font = ExtResource( 1 )
+text = "BTN_VOLVER"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CuentaRegresiva" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="CuentaRegresiva"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.576471 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="CuentaRegresiva"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+rect_scale = Vector2( 1.00197, 1.00197 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="numero" type="Label" parent="CuentaRegresiva/Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -108.0
+margin_top = -87.5
+margin_right = 108.0
+margin_bottom = 87.5
+rect_min_size = Vector2( 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 4 )
+text = "10"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Continuar" type="TextureButton" parent="CuentaRegresiva"]
+modulate = Color( 0.999691, 0.986396, 0.986396, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -302.0
+margin_top = 90.0
+margin_right = 26.0
+margin_bottom = 266.0
+texture_normal = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelActual2" type="Label" parent="CuentaRegresiva/Continuar"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -140.0
+margin_top = -16.0
+margin_right = 149.0
+margin_bottom = 26.0
+rect_pivot_offset = Vector2( 134.5, 15.5 )
+custom_fonts/font = ExtResource( 1 )
+text = "BTN_CONTINUAR"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Salir" type="TextureButton" parent="CuentaRegresiva"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 26.0
+margin_top = 122.0
+margin_right = 282.0
+margin_bottom = 250.0
+texture_normal = ExtResource( 8 )
+expand = true
+
+[node name="LabelActual3" type="Label" parent="CuentaRegresiva/Salir"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -136.0
+margin_top = -24.0
+margin_right = 153.0
+margin_bottom = 18.0
+rect_pivot_offset = Vector2( 134.5, 15.5 )
+custom_fonts/font = ExtResource( 1 )
+text = "BTN_PERDER"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Disminucion" type="Timer" parent="CuentaRegresiva"]
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CuentaRegresiva"]
+anims/continuar = SubResource( 1 )
+
+[node name="number_Down" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+
+[node name="number_Down2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+
+[connection signal="button_down" from="Panel/Volver" to="." method="_on_Volver_button_down"]
+[connection signal="pressed" from="CuentaRegresiva/Continuar" to="." method="_on_Revivir__pressed"]
+[connection signal="pressed" from="CuentaRegresiva/Salir" to="." method="_on_Sailr_pressed"]
+[connection signal="timeout" from="CuentaRegresiva/Disminucion" to="." method="_on_Disminucion_timeout"]

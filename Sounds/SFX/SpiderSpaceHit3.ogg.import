@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/SpiderSpaceHit3.ogg-e5a210c3b5a7835098d37b2efe4e3ab3.oggstr"
+
+[deps]
+
+source_file="res://Sounds/SFX/SpiderSpaceHit3.ogg"
+dest_files=[ "res://.import/SpiderSpaceHit3.ogg-e5a210c3b5a7835098d37b2efe4e3ab3.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

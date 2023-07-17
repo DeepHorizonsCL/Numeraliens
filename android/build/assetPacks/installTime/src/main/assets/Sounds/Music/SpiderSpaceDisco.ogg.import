@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/SpiderSpaceDisco.ogg-615033341c23059db13bce6942d8c083.oggstr"
+
+[deps]
+
+source_file="res://Sounds/Music/SpiderSpaceDisco.ogg"
+dest_files=[ "res://.import/SpiderSpaceDisco.ogg-615033341c23059db13bce6942d8c083.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

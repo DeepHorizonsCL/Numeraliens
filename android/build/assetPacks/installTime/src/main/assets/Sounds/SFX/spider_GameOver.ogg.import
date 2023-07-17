@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/spider_GameOver.ogg-e5169719d874154debbfee27a4079ea0.oggstr"
+
+[deps]
+
+source_file="res://Sounds/SFX/spider_GameOver.ogg"
+dest_files=[ "res://.import/spider_GameOver.ogg-e5169719d874154debbfee27a4079ea0.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

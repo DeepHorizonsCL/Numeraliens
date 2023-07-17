@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/51467__smcameron__missile-explosion.wav-8e5c196c30519c1665dc572f4cf7a98b.sample"
+
+[deps]
+
+source_file="res://Sounds/SFX/51467__smcameron__missile-explosion.wav"
+dest_files=[ "res://.import/51467__smcameron__missile-explosion.wav-8e5c196c30519c1665dc572f4cf7a98b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

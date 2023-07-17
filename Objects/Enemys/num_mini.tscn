@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Font/Sub_Menu_fuente.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scripts/num_mini.gd" type="Script" id=2]
+
+[node name="mininum" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="num_mini" type="Label" parent="."]
+margin_left = -24.0
+margin_top = -15.9999
+margin_right = 189.0
+margin_bottom = 73.0001
+rect_scale = Vector2( 0.45, 0.45 )
+custom_fonts/font = ExtResource( 1 )
+text = "-1"
+align = 3
+valign = 3
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Destroy" type="Timer" parent="."]
+wait_time = 1.24
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Destroy" to="." method="_on_Destroy_timeout"]

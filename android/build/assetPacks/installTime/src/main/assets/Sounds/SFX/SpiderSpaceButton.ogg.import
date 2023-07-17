@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/SpiderSpaceButton.ogg-b358a70822682dd21a08dbed7ffecb90.oggstr"
+
+[deps]
+
+source_file="res://Sounds/SFX/SpiderSpaceButton.ogg"
+dest_files=[ "res://.import/SpiderSpaceButton.ogg-b358a70822682dd21a08dbed7ffecb90.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Font/fuentes/NikkyouSans.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Locations/idiomas/languaje_es.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Idiomas.gd" type="Script" id=3]
+[ext_resource path="res://Sounds/SFX/botonidioma.wav" type="AudioStream" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 45
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "escalar"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.9, 0.9 ) ]
+}
+
+[node name="Idioma" type="Button"]
+margin_left = 539.334
+margin_top = 958.958
+margin_right = 711.334
+margin_bottom = 1069.96
+focus_mode = 0
+custom_fonts/font = SubResource( 1 )
+text = "ES"
+icon = ExtResource( 2 )
+flat = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+bus = "SFX_bus"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/escalar = SubResource( 2 )
+[connection signal="button_down" from="." to="." method="_on_Idioma_button_down"]

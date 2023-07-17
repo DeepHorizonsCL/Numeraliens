@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/DamageLife.ogg-53172eed87dbcd7444684143e65d78be.oggstr"
+
+[deps]
+
+source_file="res://Sounds/SFX/DamageLife.ogg"
+dest_files=[ "res://.import/DamageLife.ogg-53172eed87dbcd7444684143e65d78be.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

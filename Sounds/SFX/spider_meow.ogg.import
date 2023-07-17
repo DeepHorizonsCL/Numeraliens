@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/spider_meow.ogg-5f4ec1aca0b4ab150d33066d2d2fb70f.oggstr"
+
+[deps]
+
+source_file="res://Sounds/SFX/spider_meow.ogg"
+dest_files=[ "res://.import/spider_meow.ogg-5f4ec1aca0b4ab150d33066d2d2fb70f.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

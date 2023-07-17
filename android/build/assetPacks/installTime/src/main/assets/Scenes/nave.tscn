@@ -1,0 +1,490 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://Sprites/nave_body1.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/nave_vidrio.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/aletas.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/light.png" type="Texture" id=5]
+[ext_resource path="res://Objects/DisparoLaser.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scripts/nave.gd" type="Script" id=7]
+[ext_resource path="res://Sprites/nave_torreta_lado.png" type="Texture" id=8]
+[ext_resource path="res://Particles/line.png" type="Texture" id=9]
+[ext_resource path="res://Particles/Turbo.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Sprites/sheet.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/particulas_1_64.png" type="Texture" id=13]
+
+[sub_resource type="CanvasItemMaterial" id=3]
+blend_mode = 1
+particles_animation = true
+particles_anim_h_frames = 7
+particles_anim_v_frames = 7
+particles_anim_loop = false
+
+[sub_resource type="ParticlesMaterial" id=4]
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_point_count = 1
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 100, 0 )
+initial_velocity = 50.0
+angular_velocity = 720.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 100.0
+linear_accel_random = 1.0
+radial_accel = 100.0
+radial_accel_random = 1.0
+angle = 360.0
+angle_random = 1.0
+scale = 2.0
+scale_random = 1.0
+color = Color( 0.878431, 0.698039, 0.266667, 1 )
+hue_variation = 0.02
+hue_variation_random = 1.0
+
+[sub_resource type="Curve" id=5]
+min_value = -360.0
+max_value = 360.0
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.420815, -251.182 ), 0.0, 0.0, 0, 0, Vector2( 0.997738, -270.818 ), -12.3637, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=6]
+offsets = PoolRealArray( 0.00477327, 1 )
+colors = PoolColorArray( 1, 1, 0.545098, 1, 0.988235, 0.580392, 0, 1 )
+
+[sub_resource type="CanvasItemMaterial" id=7]
+blend_mode = 1
+particles_animation = true
+particles_anim_h_frames = 7
+particles_anim_v_frames = 7
+particles_anim_loop = false
+
+[sub_resource type="ParticlesMaterial" id=8]
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_point_count = 1
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 100, 0 )
+initial_velocity = 50.0
+angular_velocity = 720.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 100.0
+linear_accel_random = 1.0
+radial_accel = 100.0
+radial_accel_random = 1.0
+angle = 360.0
+angle_random = 1.0
+scale = 2.0
+scale_random = 1.0
+color = Color( 0.878431, 0.698039, 0.266667, 1 )
+hue_variation = 0.02
+hue_variation_random = 1.0
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 236, 359 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 236, 0, 236, 359 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 472, 0, 236, 359 )
+
+[sub_resource type="SpriteFrames" id=12]
+animations = [ {
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=13]
+resource_name = "flama"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("flama:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 408.885, 869.856 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("flama:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("flama:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 0.900006 ), Vector2( 1, 1 ) ]
+}
+
+[node name="nave" type="Node2D"]
+position = Vector2( 400.611, 1014.8 )
+scale = Vector2( 0.401393, 0.401393 )
+script = ExtResource( 7 )
+
+[node name="flama_particle" parent="." instance=ExtResource( 10 )]
+position = Vector2( -407.745, 923.512 )
+
+[node name="flama_particle2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 411.9, 952.162 )
+
+[node name="flama_particle3" parent="." instance=ExtResource( 10 )]
+position = Vector2( -166.087, 864.966 )
+scale = Vector2( 0.413664, 0.402082 )
+
+[node name="flama_particle4" parent="." instance=ExtResource( 10 )]
+position = Vector2( 170.242, 872.44 )
+scale = Vector2( 0.413664, 0.402082 )
+
+[node name="flama_particle5" parent="." instance=ExtResource( 10 )]
+position = Vector2( 0.831848, 780.261 )
+scale = Vector2( 0.565187, 0.701041 )
+
+[node name="nave_torreta" type="Sprite" parent="."]
+position = Vector2( 271.819, -140.217 )
+rotation = -1.5708
+scale = Vector2( 1.25, 1.25 )
+texture = ExtResource( 8 )
+offset = Vector2( 40, 0 )
+
+[node name="DisparoLaser" parent="nave_torreta" instance=ExtResource( 6 )]
+visible = false
+position = Vector2( 112, 6.10352e-05 )
+frame = 1
+playing = false
+
+[node name="nave_torreta2" type="Sprite" parent="."]
+position = Vector2( -268.18, -140.217 )
+rotation = -1.5708
+scale = Vector2( 1.25, 1.25 )
+texture = ExtResource( 8 )
+offset = Vector2( 40, 0 )
+
+[node name="DisparoLaser" parent="nave_torreta2" instance=ExtResource( 6 )]
+visible = false
+position = Vector2( 127.999, -0.575378 )
+frame = 2
+playing = false
+
+[node name="nave_vidrio" type="Sprite" parent="."]
+position = Vector2( -1.01654, -50.9968 )
+scale = Vector2( 1.18935, 1.40418 )
+texture = ExtResource( 3 )
+
+[node name="TextureProgress" type="TextureProgress" parent="."]
+margin_left = -333.289
+margin_top = -123.742
+margin_right = 241.711
+margin_bottom = -5.74231
+rect_scale = Vector2( 1.15767, 1.18379 )
+value = 100.0
+texture_progress = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="aletas" type="Sprite" parent="."]
+position = Vector2( 0, -257.5 )
+scale = Vector2( 1.18935, 1.40418 )
+z_index = -1
+texture = ExtResource( 4 )
+
+[node name="nave_body1" type="Sprite" parent="."]
+position = Vector2( -0.0878897, 396.085 )
+scale = Vector2( 1.18935, 1.40418 )
+texture = ExtResource( 1 )
+
+[node name="light" type="Sprite" parent="."]
+visible = false
+modulate = Color( 0.980392, 1, 0.611765, 1 )
+position = Vector2( -407.984, 859.59 )
+rotation = -3.14159
+scale = Vector2( 1.242, 0.687 )
+texture = ExtResource( 5 )
+offset = Vector2( 2.30075, -263.275 )
+
+[node name="light4" type="Sprite" parent="."]
+visible = false
+modulate = Color( 0.980392, 1, 0.611765, 1 )
+position = Vector2( -184.348, 846.991 )
+rotation = -3.14159
+scale = Vector2( 0.625599, 0.365428 )
+texture = ExtResource( 5 )
+offset = Vector2( 2.30075, -263.275 )
+
+[node name="light5" type="Sprite" parent="."]
+visible = false
+modulate = Color( 0.980392, 1, 0.611765, 1 )
+position = Vector2( 158.98, 853.291 )
+rotation = -3.14159
+scale = Vector2( 0.625599, 0.365428 )
+texture = ExtResource( 5 )
+offset = Vector2( 2.30075, -263.275 )
+
+[node name="light3" type="Sprite" parent="."]
+visible = false
+modulate = Color( 0.980392, 1, 0.611765, 1 )
+position = Vector2( 1.19727, 924.464 )
+rotation = -3.14159
+scale = Vector2( 0.757484, 0.576521 )
+texture = ExtResource( 5 )
+
+[node name="light2" type="Sprite" parent="."]
+visible = false
+modulate = Color( 0.980392, 1, 0.611765, 1 )
+position = Vector2( 411.17, 1040.46 )
+rotation = -3.14159
+scale = Vector2( 1.242, 0.687 )
+texture = ExtResource( 5 )
+
+[node name="Impacto1" type="Particles2D" parent="."]
+material = SubResource( 3 )
+position = Vector2( 417.469, 958.156 )
+amount = 60
+lifetime = 1.94
+speed_scale = 24.77
+process_material = SubResource( 4 )
+texture = ExtResource( 9 )
+
+[node name="Impacto2" type="Particles2D" parent="."]
+material = SubResource( 3 )
+position = Vector2( 2.15833, 854.329 )
+amount = 60
+lifetime = 1.94
+speed_scale = 24.77
+process_material = SubResource( 4 )
+texture = ExtResource( 9 )
+
+[node name="Impacto3" type="Particles2D" parent="."]
+material = SubResource( 3 )
+position = Vector2( 166.318, 935.708 )
+amount = 60
+lifetime = 1.94
+speed_scale = 24.77
+process_material = SubResource( 4 )
+texture = ExtResource( 9 )
+
+[node name="Impacto4" type="Particles2D" parent="."]
+material = SubResource( 3 )
+position = Vector2( -162.002, 935.708 )
+amount = 60
+lifetime = 1.94
+speed_scale = 24.77
+process_material = SubResource( 4 )
+texture = ExtResource( 9 )
+
+[node name="Impacto5" type="Particles2D" parent="."]
+material = SubResource( 3 )
+position = Vector2( -417.362, 958.156 )
+amount = 60
+lifetime = 1.94
+speed_scale = 24.77
+process_material = SubResource( 4 )
+texture = ExtResource( 9 )
+
+[node name="ApagarDisparos" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Retorna" type="Timer" parent="."]
+wait_time = 0.75
+one_shot = true
+
+[node name="CPUParticles2D7" type="CPUParticles2D" parent="."]
+position = Vector2( 465.516, 21.5925 )
+scale = Vector2( 2.47464, 2.47464 )
+lifetime = 1.21
+explosiveness = 1.0
+randomness = 0.2
+lifetime_randomness = 0.68
+draw_order = 1
+texture = ExtResource( 9 )
+direction = Vector2( 0.573, -1 )
+spread = 20.82
+gravity = Vector2( 0, 3000 )
+initial_velocity = 450.0
+initial_velocity_random = 0.17
+angle = 136.8
+angle_curve = SubResource( 5 )
+scale_amount = 1.22
+color_ramp = SubResource( 6 )
+
+[node name="CPUParticles2D8" type="CPUParticles2D" parent="."]
+position = Vector2( -710.442, 368.434 )
+scale = Vector2( 2.47464, 2.47464 )
+amount = 10
+lifetime = 6.0
+explosiveness = 1.0
+randomness = 0.2
+lifetime_randomness = 0.68
+draw_order = 1
+texture = ExtResource( 9 )
+direction = Vector2( -0.573, -1 )
+spread = 20.82
+gravity = Vector2( 0, 3000 )
+initial_velocity = 450.0
+initial_velocity_random = 0.17
+scale_amount = 1.45
+color_ramp = SubResource( 6 )
+
+[node name="CPUParticles2D9" type="CPUParticles2D" parent="."]
+position = Vector2( -290.929, -146.874 )
+scale = Vector2( 2.47464, 2.47464 )
+lifetime = 8.0
+explosiveness = 1.0
+randomness = 0.2
+lifetime_randomness = 0.68
+draw_order = 1
+texture = ExtResource( 9 )
+direction = Vector2( -0.573, -1 )
+spread = 20.82
+gravity = Vector2( 0, 3000 )
+initial_velocity = 450.0
+initial_velocity_random = 0.17
+angle = 164.9
+scale_amount = 1.53
+color_ramp = SubResource( 6 )
+
+[node name="CPUParticles2D10" type="CPUParticles2D" parent="."]
+position = Vector2( -53.1027, 196.619 )
+scale = Vector2( 2.47464, 2.47464 )
+lifetime = 3.0
+explosiveness = 1.0
+randomness = 0.2
+lifetime_randomness = 0.68
+draw_order = 1
+texture = ExtResource( 9 )
+direction = Vector2( -0.573, -1 )
+spread = 20.82
+gravity = Vector2( 0, 3000 )
+initial_velocity = 450.0
+initial_velocity_random = 0.17
+angle = 139.6
+scale_amount = 1.62
+color_ramp = SubResource( 6 )
+
+[node name="chispas1" type="Particles2D" parent="."]
+material = SubResource( 7 )
+position = Vector2( 406.036, 927.856 )
+scale = Vector2( 1, 0.970607 )
+amount = 60
+lifetime = 1.94
+speed_scale = 24.77
+process_material = SubResource( 8 )
+texture = ExtResource( 13 )
+
+[node name="chispas2" type="Particles2D" parent="."]
+material = SubResource( 7 )
+position = Vector2( -9.27533, 827.081 )
+scale = Vector2( 1, 0.970607 )
+amount = 60
+lifetime = 1.94
+speed_scale = 24.77
+process_material = SubResource( 8 )
+texture = ExtResource( 13 )
+
+[node name="chispas3" type="Particles2D" parent="."]
+material = SubResource( 7 )
+position = Vector2( 154.884, 906.068 )
+scale = Vector2( 1, 0.970607 )
+amount = 60
+lifetime = 1.94
+speed_scale = 24.77
+process_material = SubResource( 8 )
+texture = ExtResource( 13 )
+
+[node name="chispas4" type="Particles2D" parent="."]
+material = SubResource( 7 )
+position = Vector2( -173.436, 906.068 )
+scale = Vector2( 1, 0.970607 )
+amount = 60
+lifetime = 1.94
+speed_scale = 24.77
+process_material = SubResource( 8 )
+texture = ExtResource( 13 )
+
+[node name="chispas5" type="Particles2D" parent="."]
+material = SubResource( 7 )
+position = Vector2( -428.796, 927.856 )
+scale = Vector2( 1, 0.970607 )
+amount = 60
+lifetime = 1.94
+speed_scale = 24.77
+process_material = SubResource( 8 )
+texture = ExtResource( 13 )
+
+[node name="flama" type="Node2D" parent="."]
+position = Vector2( 408.885, 869.856 )
+scale = Vector2( 1, 0.97197 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="flama"]
+position = Vector2( -0.721069, 61.1545 )
+scale = Vector2( 1.2, 1.20107 )
+frames = SubResource( 12 )
+playing = true
+offset = Vector2( 1.90485, 127.853 )
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="flama"]
+position = Vector2( -822.287, 61.1545 )
+scale = Vector2( 1.2, 1.20107 )
+frames = SubResource( 12 )
+playing = true
+offset = Vector2( 1.90485, 127.853 )
+
+[node name="AnimatedSprite5" type="AnimatedSprite" parent="flama"]
+position = Vector2( -411.667, -69.2463 )
+scale = Vector2( 0.7, 0.700624 )
+frames = SubResource( 12 )
+playing = true
+offset = Vector2( 3.55833, 145.437 )
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="flama"]
+position = Vector2( -240.815, 8.15381 )
+scale = Vector2( 0.4, 0.400357 )
+frames = SubResource( 12 )
+playing = true
+offset = Vector2( 2.60681, 126.574 )
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="flama"]
+position = Vector2( -578.138, 8.15381 )
+scale = Vector2( 0.4, 0.400357 )
+frames = SubResource( 12 )
+frame = 2
+playing = true
+offset = Vector2( 2.60681, 126.574 )
+
+[node name="flama2" type="AnimationPlayer" parent="."]
+anims/flama = SubResource( 13 )
+
+[connection signal="timeout" from="ApagarDisparos" to="." method="_on_ApagarDisparos_timeout"]
+[connection signal="timeout" from="Retorna" to="." method="_on_Retorna_timeout"]

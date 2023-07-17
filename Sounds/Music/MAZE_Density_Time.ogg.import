@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/MAZE_Density_Time.ogg-7d4b22778b43d503e6f25e5c4c0d8f19.oggstr"
+
+[deps]
+
+source_file="res://Sounds/Music/MAZE_Density_Time.ogg"
+dest_files=[ "res://.import/MAZE_Density_Time.ogg-7d4b22778b43d503e6f25e5c4c0d8f19.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

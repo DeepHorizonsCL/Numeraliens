@@ -1,0 +1,1162 @@
+[gd_scene load_steps=63 format=2]
+
+[ext_resource path="res://Objects/ArrasBloque.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/maka.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Titulo.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/blocks_zone.gd" type="Script" id=4]
+[ext_resource path="res://Sprites/minus_symbol.png" type="Texture" id=5]
+[ext_resource path="res://Scripts/plusminusButton.gd" type="Script" id=6]
+[ext_resource path="res://Sprites/plus_symbol.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/button_sign_upper.png" type="Texture" id=8]
+[ext_resource path="res://icon.png" type="Texture" id=9]
+[ext_resource path="res://Scripts/EnemyCreator.gd" type="Script" id=10]
+[ext_resource path="res://Sprites/background_star.png" type="Texture" id=11]
+[ext_resource path="res://Scripts/levelController.gd" type="Script" id=12]
+[ext_resource path="res://Sprites/button_sign.png" type="Texture" id=13]
+[ext_resource path="res://Scripts/movingBackground.gd" type="Script" id=14]
+[ext_resource path="res://Font/Score_fuente.tres" type="DynamicFont" id=15]
+[ext_resource path="res://Objects/gato.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Shader/shockwave.shader" type="Shader" id=17]
+[ext_resource path="res://Font/Warning_fuente.tres" type="DynamicFont" id=18]
+[ext_resource path="res://admob-lib/admob.gd" type="Script" id=19]
+[ext_resource path="res://Scripts/Main.gd" type="Script" id=20]
+[ext_resource path="res://Scripts/Score.gd" type="Script" id=21]
+[ext_resource path="res://Font/Estudiante.tres" type="DynamicFont" id=22]
+[ext_resource path="res://Particles/Explosion.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Sounds/Music/SpiderSpaceDisco.ogg" type="AudioStream" id=24]
+[ext_resource path="res://Sounds/SFX/spider_meow.ogg" type="AudioStream" id=25]
+[ext_resource path="res://Scripts/tope.gd" type="Script" id=26]
+[ext_resource path="res://Scripts/ActivadorIrredutible.gd" type="Script" id=27]
+[ext_resource path="res://Objects/MenuPausa.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Font/Main_Menu_Fuente.tres" type="DynamicFont" id=29]
+[ext_resource path="res://Sprites/black.png" type="Texture" id=30]
+[ext_resource path="res://Objects/MenuPuntaje.tscn" type="PackedScene" id=31]
+[ext_resource path="res://Objects/DistorcionShader.tscn" type="PackedScene" id=32]
+[ext_resource path="res://Sounds/Music/SpiderSpaceRisk-2.ogg" type="AudioStream" id=33]
+[ext_resource path="res://Sounds/Music/SpiderSpaceRisk-1.ogg" type="AudioStream" id=34]
+[ext_resource path="res://Sounds/SFX/spider_StartBattle.ogg" type="AudioStream" id=35]
+[ext_resource path="res://Sounds/Music/SpiderSpaceMenu.ogg" type="AudioStream" id=36]
+[ext_resource path="res://Sounds/SFX/Numeralien.ogg" type="AudioStream" id=37]
+[ext_resource path="res://Sounds/SFX/Alarm.ogg" type="AudioStream" id=38]
+[ext_resource path="res://Sprites/luna.png" type="Texture" id=39]
+[ext_resource path="res://Sprites/planeta1.png" type="Texture" id=40]
+[ext_resource path="res://Sprites/background1.png" type="Texture" id=41]
+[ext_resource path="res://Scripts/luna.gd" type="Script" id=42]
+[ext_resource path="res://Scenes/nave.tscn" type="PackedScene" id=43]
+[ext_resource path="res://shock.tscn" type="PackedScene" id=44]
+[ext_resource path="res://Sounds/SFX/Spider_Warp_Engine_Loop.ogg" type="AudioStream" id=45]
+[ext_resource path="res://Sounds/SFX/Spider_Warp_Engine_Loop_Slow.ogg" type="AudioStream" id=46]
+[ext_resource path="res://Sounds/SFX/Spider_Warp_Engine_Down.ogg" type="AudioStream" id=47]
+[ext_resource path="res://Sprites/bottons/start_botton2.png" type="Texture" id=48]
+[ext_resource path="res://Sounds/SFX/spider_GameOver.ogg" type="AudioStream" id=49]
+[ext_resource path="res://Sprites/title3.png" type="Texture" id=50]
+[ext_resource path="res://Sprites/bottons/arrow_botton_red.png" type="Texture" id=51]
+[ext_resource path="res://Sprites/bottons/start_botton2_red.png" type="Texture" id=52]
+[ext_resource path="res://Scripts/ModoLabel.gd" type="Script" id=53]
+[ext_resource path="res://Sprites/bottons/arrow_botton.png" type="Texture" id=54]
+[ext_resource path="res://Objects/Camera2D.tscn" type="PackedScene" id=55]
+[ext_resource path="res://Sprites/betaWord.png" type="Texture" id=56]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 365.847, 83.6556 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 395.919, 28.319 )
+
+[sub_resource type="Animation" id=3]
+length = 8.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../Background/nave:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.4, 0.4 ), Vector2( 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../Background/nave:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 400, 1002.35 ), Vector2( 400, 1450 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../Background/estrellas:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 1, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.475, 60 ), Vector2( 1.475, 1.446 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("../Background/estrellas:speed")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 479, 16 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("../Background/planeta:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.7, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 710.488, -2600 ), Vector2( 710.488, 400 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("../Background/planeta:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 1, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 10 ), Vector2( 1, 1 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("../CPUParticles2D:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.462745 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("../Distorcion/Distorcion:material:shader_param/view")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("warp:volume_db")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -49.636 ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("warp:autoplay")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("warp:playing")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, false ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("warpslow:playing")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 5.34 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("warpdown:playing")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0.00999999 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("warpdown:volume_db")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 5.32348 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -5.0 ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Button:rect_position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0, 1.4, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 311.703, 1127.76 ), Vector2( 311.703, 1127.76 ), Vector2( 311.703, 1038.76 ) ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("../CPUParticles2D2:emitting")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("../CPUParticles2D2:modulate")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.768627, 0.811765, 1, 0.682353 ), Color( 0.768627, 0.811765, 1, 0 ) ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("../Background/nave/CPUParticles2D7:emitting")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("../Background/nave/CPUParticles2D8:emitting")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("../Background/nave/CPUParticles2D9:emitting")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("../Background/nave/CPUParticles2D10:emitting")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "mov"
+length = 8.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Background/nave:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.4, 0.4 ), Vector2( 0.405, 0.405 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Background/nave:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 400, 1002.35 ), Vector2( 401, 1042 ) ]
+}
+
+[sub_resource type="ShaderMaterial" id=5]
+resource_local_to_scene = true
+shader = ExtResource( 17 )
+shader_param/center = Vector2( -0.152, 0.5 )
+shader_param/force = 0.186
+shader_param/size = 0.0
+shader_param/thickness = null
+shader_param/debug = null
+
+[sub_resource type="CapsuleShape2D" id=6]
+radius = 193.887
+height = 0.0
+
+[node name="Escena" type="Node2D"]
+script = ExtResource( 20 )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+modulate = Color( 1, 1, 1, 0.462745 )
+position = Vector2( 347.738, 10.0793 )
+scale = Vector2( -0.372, 13.421 )
+z_index = -14
+amount = 40
+lifetime = 0.5
+fixed_fps = 30
+texture = ExtResource( 30 )
+emission_shape = 2
+emission_rect_extents = Vector2( 1600, 1 )
+direction = Vector2( 0, 1 )
+spread = 0.0
+initial_velocity = 432.69
+
+[node name="Background" type="Node2D" parent="."]
+position = Vector2( -49, 0 )
+z_index = -10
+
+[node name="space" type="Sprite" parent="Background"]
+modulate = Color( 0.5, 0.5, 0.5, 1 )
+position = Vector2( 396.364, 726.544 )
+scale = Vector2( 1.562, 1.252 )
+z_index = -12
+texture = ExtResource( 41 )
+
+[node name="estrellas" type="Sprite" parent="Background"]
+position = Vector2( 398.382, 1535.71 )
+scale = Vector2( 1.475, 45.3615 )
+z_index = -5
+texture = ExtResource( 11 )
+centered = false
+offset = Vector2( -375.294, -1100 )
+region_enabled = true
+region_rect = Rect2( 42.103, 404.357, 740.288, 1100 )
+script = ExtResource( 14 )
+speed = 479
+
+[node name="planeta" type="Node2D" parent="Background"]
+position = Vector2( 710.488, -1742.86 )
+scale = Vector2( 1, 7.75 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="planeta1" type="Sprite" parent="Background/planeta"]
+position = Vector2( 3.09833, 254.953 )
+texture = ExtResource( 40 )
+offset = Vector2( -3.09833, -254.953 )
+
+[node name="lunita" type="Node2D" parent="Background/planeta"]
+position = Vector2( -268.124, -51.642 )
+script = ExtResource( 42 )
+__meta__ = {
+"_edit_group_": true
+}
+planetpath = NodePath("..")
+
+[node name="Cambio" type="Timer" parent="Background/planeta/lunita"]
+wait_time = 44.0
+one_shot = true
+autostart = true
+
+[node name="Spr_lunita" type="Sprite" parent="Background/planeta/lunita"]
+texture = ExtResource( 39 )
+
+[node name="nave" parent="Background" instance=ExtResource( 43 )]
+position = Vector2( 401, 1096 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="DisparoLaser" parent="Background/nave/nave_torreta2" index="0"]
+frame = 1
+
+[node name="nave_vidrio" parent="Background/nave" index="7"]
+modulate = Color( 1, 0.309804, 0.309804, 1 )
+
+[node name="TextureProgress" parent="Background/nave" index="8"]
+mouse_filter = 2
+
+[node name="CPUParticles2D8" parent="Background/nave" index="25"]
+preprocess = 176.3
+
+[node name="CPUParticles2D9" parent="Background/nave" index="26"]
+preprocess = 5.69
+
+[node name="flama" parent="Background/nave" index="33"]
+scale = Vector2( 1, 1 )
+
+[node name="AnimatedSprite" parent="Background/nave/flama" index="0"]
+frame = 2
+
+[node name="AnimatedSprite2" parent="Background/nave/flama" index="1"]
+frame = 2
+
+[node name="AnimatedSprite5" parent="Background/nave/flama" index="2"]
+frame = 2
+
+[node name="AnimatedSprite3" parent="Background/nave/flama" index="3"]
+frame = 2
+
+[node name="AnimatedSprite4" parent="Background/nave/flama" index="4"]
+frame = 1
+
+[node name="EnemyCreators" type="Node2D" parent="."]
+visible = false
+position = Vector2( 358.11, -68.3433 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_group_": true
+}
+control_path = NodePath("../bloques")
+nave_path = NodePath("../Background/nave")
+
+[node name="creator1" type="Node2D" parent="EnemyCreators"]
+position = Vector2( -288, 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="EnemyCreators/creator1"]
+position = Vector2( 8, 0 )
+texture = ExtResource( 9 )
+
+[node name="creator2" type="Node2D" parent="EnemyCreators"]
+position = Vector2( -104, 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="EnemyCreators/creator2"]
+position = Vector2( 8, 0 )
+texture = ExtResource( 9 )
+
+[node name="creator3" type="Node2D" parent="EnemyCreators"]
+position = Vector2( 64, 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="EnemyCreators/creator3"]
+position = Vector2( 8, 0 )
+texture = ExtResource( 9 )
+
+[node name="creator4" type="Node2D" parent="EnemyCreators"]
+position = Vector2( 224, 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="EnemyCreators/creator4"]
+position = Vector2( 8, 0 )
+texture = ExtResource( 9 )
+
+[node name="TimerItera" type="Timer" parent="EnemyCreators"]
+wait_time = 12.0
+
+[node name="TimerEnemy" type="Timer" parent="EnemyCreators"]
+wait_time = 4.0
+
+[node name="bloques" type="Node2D" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -13.9933, 421.566 )
+script = ExtResource( 12 )
+MenuPath = NodePath("../Menu")
+TimerEnemyPath = NodePath("../EnemyCreators/TimerItera")
+topePath = NodePath("tope")
+irreducPath = NodePath("ActivadorIrredutible")
+EnemyCreatorPath = NodePath("../EnemyCreators")
+bgpspacePath = NodePath("../Background/space")
+planetPath = NodePath("../Background/planeta")
+barraVidaPath = NodePath("../Background/nave/TextureProgress")
+
+[node name="Explosiones" type="Timer" parent="bloques"]
+wait_time = 0.45
+one_shot = true
+
+[node name="GameOver" type="Timer" parent="bloques"]
+wait_time = 6.0
+one_shot = true
+
+[node name="blocks zone" type="Area2D" parent="bloques" groups=["tope"]]
+position = Vector2( 360.069, 995.568 )
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bloques/blocks zone"]
+position = Vector2( 1.81256, 2.05518 )
+shape = SubResource( 1 )
+
+[node name="tope" type="KinematicBody2D" parent="bloques" groups=["tope"]]
+position = Vector2( 350.644, 882.192 )
+collision_layer = 17
+collision_mask = 17
+script = ExtResource( 26 )
+__meta__ = {
+"_edit_group_": true
+}
+controlPath = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bloques/tope"]
+position = Vector2( 1.71317, 0.670959 )
+shape = SubResource( 2 )
+
+[node name="destructor" type="KinematicBody2D" parent="bloques" groups=["block_destructor"]]
+position = Vector2( 373.634, -713.909 )
+scale = Vector2( 5.095, 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bloques/destructor"]
+position = Vector2( 3.60087, 2.55868 )
+shape = SubResource( 2 )
+
+[node name="destructor2" type="KinematicBody2D" parent="bloques" groups=["block_destructor"]]
+position = Vector2( 405.993, 1210.43 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bloques/destructor2"]
+position = Vector2( 1.71317, 0.670959 )
+shape = SubResource( 2 )
+
+[node name="ActivadorIrredutible" type="KinematicBody2D" parent="bloques" groups=["irreduct"]]
+position = Vector2( 374.937, 1361.43 )
+scale = Vector2( 1, 2.4 )
+script = ExtResource( 27 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bloques/ActivadorIrredutible"]
+position = Vector2( 1.71317, 0.670959 )
+shape = SubResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="bloques/ActivadorIrredutible"]
+visible = false
+margin_left = -344.0
+margin_top = -17.0
+margin_right = 368.0
+margin_bottom = 23.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Borde" type="KinematicBody2D" parent="bloques" groups=["borde"]]
+position = Vector2( -50.0067, 185.434 )
+scale = Vector2( 0.100093, 26.3918 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bloques/Borde"]
+position = Vector2( 1.71317, 0.670959 )
+shape = SubResource( 2 )
+
+[node name="Borde2" type="KinematicBody2D" parent="bloques" groups=["borde"]]
+position = Vector2( 773.993, 185.434 )
+scale = Vector2( 0.100093, 26.3918 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bloques/Borde2"]
+position = Vector2( 1.71317, 0.670959 )
+shape = SubResource( 2 )
+
+[node name="Button" type="Button" parent="bloques"]
+modulate = Color( 0.94902, 1, 1, 1 )
+margin_left = 311.703
+margin_top = 1127.76
+margin_right = 397.175
+margin_bottom = 1213.6
+rect_scale = Vector2( 2.321, 2.75 )
+rect_pivot_offset = Vector2( 51.0903, 56.6906 )
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+expand_icon = true
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="button_sign" type="Sprite" parent="bloques/Button"]
+position = Vector2( 52.837, 41.002 )
+scale = Vector2( 0.515, 0.515 )
+texture = ExtResource( 13 )
+
+[node name="button_sign_upper" type="Sprite" parent="bloques/Button"]
+modulate = Color( 1, 0.301961, 0.309804, 1 )
+position = Vector2( 381.109, 135.148 )
+scale = Vector2( 0.505, 0.501 )
+texture = ExtResource( 8 )
+offset = Vector2( -649.792, -190.303 )
+
+[node name="plus" type="Sprite" parent="bloques/Button"]
+position = Vector2( 52.2426, 34.4542 )
+scale = Vector2( 0.6, 0.5 )
+texture = ExtResource( 5 )
+
+[node name="minus" type="Sprite" parent="bloques/Button"]
+position = Vector2( 52.2073, 34.6693 )
+scale = Vector2( 0.6, 0.5 )
+texture = ExtResource( 7 )
+
+[node name="ArrasBloque" parent="bloques" instance=ExtResource( 1 )]
+position = Vector2( 111.081, 973.87 )
+numero = 10
+controlpath = NodePath("..")
+
+[node name="ArrasBloque1" parent="bloques" instance=ExtResource( 1 )]
+position = Vector2( 219.807, 973.97 )
+numerodebloque = 1
+controlpath = NodePath("..")
+
+[node name="ArrasBloque2" parent="bloques" instance=ExtResource( 1 )]
+position = Vector2( 511.699, 971.2 )
+numero = 4
+numerodebloque = 2
+controlpath = NodePath("..")
+
+[node name="ArrasBloque3" parent="bloques" instance=ExtResource( 1 )]
+position = Vector2( 615.099, 970.99 )
+numero = 5
+numerodebloque = 3
+controlpath = NodePath("..")
+
+[node name="Score" type="Node2D" parent="bloques"]
+position = Vector2( -5.3454, -419.987 )
+z_index = 4
+
+[node name="Score" type="Label" parent="bloques/Score"]
+margin_left = 19.0
+margin_right = 202.0
+margin_bottom = 49.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 22 )
+text = "Score: "
+script = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="bloques/Score/Score"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="bloques"]
+anims/Intro = SubResource( 3 )
+anims/mov = SubResource( 4 )
+
+[node name="warp" type="AudioStreamPlayer" parent="bloques"]
+stream = ExtResource( 45 )
+autoplay = true
+
+[node name="warpslow" type="AudioStreamPlayer" parent="bloques"]
+stream = ExtResource( 46 )
+volume_db = -5.0
+
+[node name="warpdown" type="AudioStreamPlayer" parent="bloques"]
+stream = ExtResource( 47 )
+
+[node name="AdMob" type="Node" parent="."]
+script = ExtResource( 19 )
+is_real = true
+banner_id = "ca-app-pub-7327574553461407/6678654496"
+interstitial_id = "ca-app-pub-7327574553461407/5325016702"
+rewarded_id = "ca-app-pub-7327574553461407/5206624878"
+is_personalized = false
+
+[node name="Camera2D" parent="." instance=ExtResource( 55 )]
+
+[node name="Explosion" parent="." instance=ExtResource( 23 )]
+position = Vector2( 2301.73, 228.586 )
+
+[node name="ExplosionSFX" parent="Explosion" index="2"]
+volume_db = -80.0
+
+[node name="ouch" parent="Explosion" index="3"]
+volume_db = -80.0
+autoplay = false
+
+[node name="Musica_pocaVida1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 34 )
+volume_db = -4.0
+bus = "Music_bus"
+
+[node name="Musica_pocaVida2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 33 )
+volume_db = -4.0
+bus = "Music_bus"
+
+[node name="Musica" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 24 )
+volume_db = -11.571
+bus = "Music_bus"
+
+[node name="Musica_menu" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 36 )
+autoplay = true
+bus = "Music_bus"
+
+[node name="Sonido_boton" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 35 )
+bus = "SFX_bus"
+
+[node name="Sonido_Alarma" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 38 )
+volume_db = -6.0
+bus = "SFX_bus"
+
+[node name="GameOver" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 49 )
+
+[node name="Menu" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Control" type="Control" parent="Menu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -73.0204
+margin_bottom = -73.0205
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="Menu/Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Start" type="TextureButton" parent="Menu/Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -174.0
+margin_top = -52.9796
+margin_right = 307.0
+margin_bottom = 164.02
+rect_scale = Vector2( 0.65, 0.65 )
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 48 )
+
+[node name="txt_Start" type="Label" parent="Menu/Control/Start"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -193.893
+margin_top = -50.655
+margin_right = 156.107
+margin_bottom = 32.345
+rect_scale = Vector2( 1.15862, 1.15862 )
+custom_fonts/font = ExtResource( 18 )
+text = "KEY_START"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="extreme" type="TextureRect" parent="Menu/Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -118.0
+margin_top = 83.0204
+margin_right = 363.0
+margin_bottom = 300.02
+rect_scale = Vector2( 0.45, 0.45 )
+texture = ExtResource( 48 )
+script = ExtResource( 53 )
+t1 = ExtResource( 48 )
+t2 = ExtResource( 52 )
+a1 = ExtResource( 54 )
+a2 = ExtResource( 51 )
+
+[node name="txt_extreme" type="Label" parent="Menu/Control/extreme"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -180.5
+margin_top = -38.4999
+margin_right = 275.5
+margin_bottom = 65.4997
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/font = ExtResource( 18 )
+text = "LABEL_NORMAL"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="arrow_l" type="Button" parent="Menu/Control/extreme"]
+margin_left = 98.4615
+margin_top = 24.6154
+margin_right = 240.462
+margin_bottom = 199.615
+rect_scale = Vector2( -1.65, 1 )
+focus_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 54 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="arrow_r" type="Button" parent="Menu/Control/extreme"]
+margin_left = 393.846
+margin_top = 24.6154
+margin_right = 535.846
+margin_bottom = 199.615
+rect_scale = Vector2( 1.65, 1 )
+focus_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 54 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="tutorial" type="TextureButton" parent="Menu/Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -118.0
+margin_top = 179.02
+margin_right = 363.0
+margin_bottom = 396.02
+rect_scale = Vector2( 0.45, 0.45 )
+texture_normal = ExtResource( 48 )
+
+[node name="txt_tuto" type="Label" parent="Menu/Control/tutorial"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -180.5
+margin_top = -38.4999
+margin_right = 275.5
+margin_bottom = 65.4997
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/font = ExtResource( 18 )
+text = "BTN_TUTO"
+align = 1
+valign = 1
+
+[node name="Titulo" type="TextureButton" parent="Menu/Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -262.0
+margin_top = -348.98
+margin_right = 539.0
+margin_bottom = 68.0204
+rect_scale = Vector2( 0.65, 0.65 )
+texture_normal = ExtResource( 50 )
+script = ExtResource( 3 )
+
+[node name="numeraliens" type="AudioStreamPlayer" parent="Menu/Control/Titulo"]
+stream = ExtResource( 37 )
+
+[node name="imhBeta" type="TextureRect" parent="Menu/Control/Titulo"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -425.115
+margin_top = 173.039
+margin_right = -253.115
+margin_bottom = 261.039
+texture = ExtResource( 56 )
+
+[node name="MaxScoreLabel" type="Label" parent="Menu/Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -132.622
+margin_top = -546.406
+margin_right = 137.378
+margin_bottom = -497.406
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.705882 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 3
+custom_fonts/font = ExtResource( 22 )
+text = "MAXSCORE"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MaxScore" type="Label" parent="Menu/Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -141.823
+margin_top = -484.858
+margin_right = 158.177
+margin_bottom = -364.858
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.705882 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 3
+custom_fonts/font = ExtResource( 15 )
+text = "30000"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="txt_Version" type="Label" parent="Menu/Control"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -228.0
+margin_top = 29.0204
+margin_right = 262.0
+margin_bottom = 112.02
+rect_scale = Vector2( 0.45, 0.45 )
+custom_fonts/font = ExtResource( 18 )
+text = "Version: 0.1.45"
+align = 1
+valign = 1
+
+[node name="Distorcion" parent="." instance=ExtResource( 32 )]
+layer = 0
+
+[node name="Distorcion" parent="Distorcion" index="1"]
+visible = false
+
+[node name="MenuPausa" parent="." instance=ExtResource( 28 )]
+layer = 10
+
+[node name="Pausa2" parent="MenuPausa/Pausa" index="0"]
+margin_left = -477.881
+margin_top = -26.3811
+margin_right = -374.763
+margin_bottom = 21.6189
+align = 1
+valign = 1
+
+[node name="BANNER" type="Button" parent="MenuPausa/Panel" index="9"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -80.4271
+margin_top = -438.648
+margin_right = 78.5729
+margin_bottom = -390.648
+custom_fonts/font = ExtResource( 29 )
+text = "BANNER"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Puntaje" parent="." instance=ExtResource( 31 )]
+
+[node name="blackbox" type="Sprite" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 361.114, -150.99 )
+scale = Vector2( 1.45168, 1 )
+z_index = 100
+texture = ExtResource( 30 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 700, 300 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="shock" parent="." instance=ExtResource( 44 )]
+material = SubResource( 5 )
+position = Vector2( 368, 920 )
+
+[node name="maka" type="Node2D" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -599.449, 217.232 )
+scale = Vector2( 0.52, 0.52 )
+script = ExtResource( 2 )
+playerpath = NodePath("../bloques")
+
+[node name="Timer" type="Timer" parent="maka"]
+one_shot = true
+
+[node name="Stop" type="Timer" parent="maka"]
+wait_time = 10.0
+one_shot = true
+
+[node name="meaw" type="AudioStreamPlayer" parent="maka"]
+stream = ExtResource( 25 )
+volume_db = -8.0
+
+[node name="Area2D" type="Area2D" parent="maka"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="maka/Area2D"]
+position = Vector2( 0, -8.61591 )
+scale = Vector2( 1.18837, 1.01833 )
+shape = SubResource( 6 )
+
+[node name="TimerHerra" type="Timer" parent="maka"]
+one_shot = true
+
+[node name="gato" parent="maka" instance=ExtResource( 16 )]
+position = Vector2( -86.0352, -14.0453 )
+scale = Vector2( 1.25, 1.25 )
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+modulate = Color( 0.768627, 0.811765, 1, 0.682353 )
+position = Vector2( 347.738, 10.0793 )
+rotation = 3.14159
+scale = Vector2( 0.372, -13.421 )
+z_index = 36
+amount = 40
+lifetime = 0.5
+randomness = 0.22
+fixed_fps = 30
+texture = ExtResource( 30 )
+emission_shape = 2
+emission_rect_extents = Vector2( 1600, 1 )
+direction = Vector2( 0, 1 )
+spread = 0.0
+initial_velocity = 432.69
+
+[connection signal="timeout" from="Background/planeta/lunita/Cambio" to="Background/planeta/lunita" method="_on_Cambio_timeout"]
+[connection signal="timeout" from="EnemyCreators/TimerItera" to="EnemyCreators" method="_on_TimerItera_timeout"]
+[connection signal="timeout" from="EnemyCreators/TimerEnemy" to="EnemyCreators" method="_on_TimerEnemy_timeout"]
+[connection signal="timeout" from="bloques/Explosiones" to="bloques" method="_on_Explosiones_timeout"]
+[connection signal="timeout" from="bloques/GameOver" to="bloques" method="_on_GameOver_timeout"]
+[connection signal="body_entered" from="bloques/blocks zone" to="bloques/blocks zone" method="_on_blocks_zone_body_entered"]
+[connection signal="body_exited" from="bloques/blocks zone" to="bloques/blocks zone" method="_on_blocks_zone_body_exited"]
+[connection signal="pressed" from="bloques/Button" to="bloques/Button" method="_on_Button_pressed"]
+[connection signal="banner_failed_to_load" from="AdMob" to="." method="_on_AdMob_banner_failed_to_load"]
+[connection signal="banner_loaded" from="AdMob" to="." method="_on_AdMob_banner_loaded"]
+[connection signal="interstitial_failed_to_load" from="AdMob" to="." method="_on_AdMob_interstitial_failed_to_load"]
+[connection signal="interstitial_loaded" from="AdMob" to="." method="_on_AdMob_interstitial_loaded"]
+[connection signal="rewarded_video_failed_to_load" from="AdMob" to="." method="_on_AdMob_rewarded_video_failed_to_load"]
+[connection signal="rewarded_video_loaded" from="AdMob" to="." method="_on_AdMob_rewarded_video_loaded"]
+[connection signal="pressed" from="Menu/Control/Start" to="bloques" method="_on_Start_pressed"]
+[connection signal="pressed" from="Menu/Control/extreme/arrow_l" to="Menu/Control/extreme" method="_on_arrow_l_pressed"]
+[connection signal="pressed" from="Menu/Control/extreme/arrow_r" to="Menu/Control/extreme" method="_on_arrow_r_pressed"]
+[connection signal="pressed" from="Menu/Control/tutorial" to="bloques" method="_on_tutorial_pressed"]
+[connection signal="button_down" from="Menu/Control/Titulo" to="Menu/Control/Titulo" method="_on_Titulo_button_down"]
+[connection signal="button_down" from="MenuPausa/Panel/BANNER" to="." method="_on_BANNER_button_down"]
+[connection signal="timeout" from="maka/Timer" to="maka" method="_on_Timer_timeout"]
+[connection signal="timeout" from="maka/Stop" to="maka" method="_on_Stop_timeout"]
+[connection signal="input_event" from="maka/Area2D" to="maka" method="_on_Area2D_input_event"]
+[connection signal="timeout" from="maka/TimerHerra" to="maka" method="_on_TimerHerra_timeout"]
+
+[editable path="Background/nave"]
+[editable path="Explosion"]
+[editable path="Distorcion"]
+[editable path="MenuPausa"]

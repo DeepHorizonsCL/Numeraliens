@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Alarm.ogg-74ad2bf1bb95d850a23d1bdaff5d87b2.oggstr"
+
+[deps]
+
+source_file="res://Sounds/SFX/Alarm.ogg"
+dest_files=[ "res://.import/Alarm.ogg-74ad2bf1bb95d850a23d1bdaff5d87b2.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

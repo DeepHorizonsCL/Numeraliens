@@ -1,0 +1,74 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scripts/ModoLabel.gd" type="Script" id=1]
+[ext_resource path="res://Font/Warning_fuente.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Sprites/bottons/start_botton2_red.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/bottons/start_botton2.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/bottons/arrow_botton.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/bottons/arrow_botton_red.png" type="Texture" id=6]
+
+[node name="extreme" type="TextureRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -118.0
+margin_top = 83.0204
+margin_right = 363.0
+margin_bottom = 300.02
+rect_scale = Vector2( 0.45, 0.45 )
+texture = ExtResource( 4 )
+script = ExtResource( 1 )
+t1 = ExtResource( 4 )
+t2 = ExtResource( 3 )
+a1 = ExtResource( 5 )
+a2 = ExtResource( 6 )
+
+[node name="txt_extreme" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -180.5
+margin_top = -38.4999
+margin_right = 275.5
+margin_bottom = 65.4997
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/font = ExtResource( 2 )
+text = "LABEL_NORMAL"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="arrow_l" type="Button" parent="."]
+margin_left = 98.4615
+margin_top = 24.6154
+margin_right = 240.462
+margin_bottom = 199.615
+rect_scale = Vector2( -1.65, 1 )
+focus_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 5 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="arrow_r" type="Button" parent="."]
+margin_left = 393.846
+margin_top = 24.6154
+margin_right = 535.846
+margin_bottom = 199.615
+rect_scale = Vector2( 1.65, 1 )
+focus_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 5 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="arrow_l" to="." method="_on_arrow_l_pressed"]
+[connection signal="pressed" from="arrow_r" to="." method="_on_arrow_r_pressed"]
